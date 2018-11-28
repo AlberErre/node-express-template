@@ -10,11 +10,18 @@ export interface HelloState {
 }
 
 export default class Hello extends React.Component<HelloProps, HelloState> {
+  constructor(props: HelloProps) {
+    super(props);
+    this.state = {
+      counter: 10,
+      enabled: false
+    };
+  }
 
   render() {
     return (
       <h1>
-        Hello {this.props.name}
+        Hello {this.props.name} - {this.state.counter}
       </h1>
     );
   }
