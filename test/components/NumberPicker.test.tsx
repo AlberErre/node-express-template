@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import CounterButton from "../../src/components/CounterButton";
 import NumberPicker from '../../src/components/NumberPicker';
-import NumberDisplayer from "../../src/components/NumberDisplayer";
 
 describe("NumberPicker", () => {
   describe("render", () => {
