@@ -4,7 +4,11 @@ export interface CounterButtonState {
   counter: number;
 }
 
-export default class CounterButton extends React.Component <{},CounterButtonState> {
+export interface CounterButtonProps {
+  buttonSymbol: string;
+}
+
+export default class CounterButton extends React.Component<CounterButtonProps,CounterButtonState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +16,7 @@ export default class CounterButton extends React.Component <{},CounterButtonStat
     };
 
     this.increaseCount = this.increaseCount.bind(this);
+    this.decreaseCount = this.decreaseCount.bind(this);
   }
 
   increaseCount() {
@@ -20,9 +25,21 @@ export default class CounterButton extends React.Component <{},CounterButtonStat
     });
   }
 
+  decreaseCount() {
+    this.setState({
+      counter: this.state.counter - 1
+    });
+  }
+
   render() {
-    return <button onClick={this.increaseCount}>
-        {this.state.counter}
+    return <button
+        onClick={
+          this.props.buttonSymbol === "+"
+            ? this.increaseCount
+            : this.decreaseCount
+        }
+      >
+        {this.props.buttonSymbol}
       </button>;
   }
 }
