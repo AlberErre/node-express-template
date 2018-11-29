@@ -41,5 +41,17 @@ describe("NumberPicker", () => {
       expect(wrapper.find('div').childAt(1).text()).toBe('0');
       expect(wrapper.find('div').childAt(1).is('span')).toBeTruthy();
     });
+
+    test('Botón suma contador al hacer click', () => {
+      const wrapper = shallow(<NumberPicker />);
+      wrapper.find('button').at(0).simulate("click");
+      expect(wrapper.find("span").text()).toBe("1");
+    });
+
+    test('Botón resta contador al hacer click', () => {
+      const wrapper = shallow(<NumberPicker />);
+      wrapper.find('button').at(1).simulate("click");
+      expect(wrapper.find("span").text()).toBe("-1");
+    });
   });
 });
