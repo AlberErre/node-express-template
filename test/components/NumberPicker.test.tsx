@@ -41,5 +41,11 @@ describe("NumberPicker", () => {
       expect(wrapper.find('div').childAt(1).text()).toBe('0');
       expect(wrapper.find('div').childAt(1).is('span')).toBeTruthy();
     });
+
+    test('El orden debe ser +, 0, -.', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      const texts = wrapper.find('div').children().map(node => node.text());
+      expect(texts).toEqual(['+', '0', '-']);
+    });
   });
 });
