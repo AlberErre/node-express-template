@@ -47,5 +47,17 @@ describe("NumberPicker", () => {
       const texts = wrapper.find('div').children().map(node => node.text());
       expect(texts).toEqual(['+', '0', '-']);
     });
+
+    test('Cuando hago click en el Botón de sumar, este suma 1', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      wrapper.find('button').at(0).simulate("click");
+      expect(wrapper.find("span").text()).toBe("1");
+    });
+
+    test('Cuando hago click en el Botón de restar, este resta 1', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      wrapper.find('button').at(1).simulate("click");
+      expect(wrapper.find("span").text()).toBe("-1");
+    });
   });
 });
