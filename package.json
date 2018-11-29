@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "node dist/bundle.js",
-    "dev": "webpack-dev-server --mode development"
+    "dev": "webpack-dev-server --mode development",
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "Alber Erre",
