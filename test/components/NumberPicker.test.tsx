@@ -31,11 +31,15 @@ describe("NumberPicker", () => {
       expect(wrapper.find('button').at(1).text()).toBe('-');
     });
 
-    test('El orden debe ser el correcto -> + , 0, -', () => {
-      const wrapper = shallow(<NumberPicker />);
-      expect(wrapper.find("div").children().at(0).text()).toBe('+');
-      expect(wrapper.find("div").children().at(1).text()).toBe('0');
-      expect(wrapper.find("div").children().at(2).text()).toBe('-');
+    test('El primer elemento es un +', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      expect(wrapper.find('div').childAt(0).text()).toBe('+');
+    });
+
+    test('El segundo elemento es un 0 y es un span', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      expect(wrapper.find('div').childAt(1).text()).toBe('0');
+      expect(wrapper.find('div').childAt(1).is('span')).toBeTruthy();
     });
   });
 });
