@@ -29,10 +29,10 @@ export default class NumberPicker extends React.Component<{}, NumberPickerState>
   }
 
   render() {
-    return (
-      <div>
-        <NumberDisplayer />
-      </div>
-    )
+    return <div>
+      <span>0</span>
+      <button>+</button>
+      <button>-</button>
+    </div>;
   }
 }
