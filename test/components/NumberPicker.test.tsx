@@ -30,5 +30,20 @@ describe("NumberPicker", () => {
       const wrapper = shallow(<NumberPicker/>);
       expect(wrapper.find('button').at(1).text()).toBe('-');
     });
+
+    test('El primer elemento es un +', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      expect(wrapper.find('div').childAt(0).text()).toBe('+');
+    });
+
+    test('El segundo elemento es un 0', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      expect(wrapper.find('div').childAt(1).text()).toBe('0');
+    });
+
+    test('El tercer elemento es un -', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      expect(wrapper.find('div').childAt(2).text()).toBe('-');
+    });
   });
 });
