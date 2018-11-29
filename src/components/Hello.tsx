@@ -1,28 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface HelloProps {
   name: string;
 }
 
-export interface HelloState {
-  counter: number;
-  enabled: boolean;
-}
-
-export default class Hello extends React.Component<HelloProps, HelloState> {
-  constructor(props: HelloProps) {
-    super(props);
-    this.state = {
-      counter: 10,
-      enabled: false
-    };
-  }
-
+export default class Hello extends React.Component<HelloProps, {}> {
   render() {
-    return (
-      <h1>
-        Hello {this.props.name} - {this.state.counter}
-      </h1>
-    );
+    return <h1>Hello {this.props.name}</h1>;
   }
 }
