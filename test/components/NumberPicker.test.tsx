@@ -30,5 +30,12 @@ describe("NumberPicker", () => {
       const wrapper = shallow(<NumberPicker/>);
       expect(wrapper.find('button').at(1).text()).toBe('-');
     });
+
+    test('El orden debe ser el correcto -> + , 0, -', () => {
+      const wrapper = shallow(<NumberPicker />);
+      expect(wrapper.find("div").children().at(0).text()).toBe('+');
+      expect(wrapper.find("div").children().at(1).text()).toBe('0');
+      expect(wrapper.find("div").children().at(2).text()).toBe('-');
+    });
   });
 });

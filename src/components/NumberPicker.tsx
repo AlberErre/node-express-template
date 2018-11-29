@@ -30,8 +30,8 @@ export default class NumberPicker extends React.Component<{}, NumberPickerState>
 
   render() {
     return <div>
-      <span>0</span>
       <button>+</button>
+      <span>0</span>
       <button>-</button>
     </div>;
   }
