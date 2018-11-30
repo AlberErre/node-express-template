@@ -2,39 +2,35 @@ import * as React from "react";
 import NumberDisplayer from "./NumberDisplayer";
 
 export interface NumberPickerState {
-  pickedNumber: number;
+  counter: number;
 }
 
 export default class NumberPicker extends React.Component<{}, NumberPickerState> {
   constructor(props) {
     super(props);
     this.state = {
-      pickedNumber: 0
+      counter: 0
     };
 
-    this.increasePicker = this.increasePicker.bind(this);
-    this.decreasePicker = this.decreasePicker.bind(this);
+    this.increaseNumber = this.increaseNumber.bind(this);
+    this.decreaseNumber = this.decreaseNumber.bind(this);
   }
 
-  increasePicker() {
-    this.setState({
-      pickedNumber: this.state.pickedNumber + 1
-    });
+  increaseNumber() {
+    this.setState({ counter: this.state.counter + 1 });
   }
 
-  decreasePicker() {
-    this.setState({
-      pickedNumber: this.state.pickedNumber - 1
-    });
+  decreaseNumber() {
+    this.setState({ counter: this.state.counter - 1 });
   }
 
   render() {
     return <div className="number-picker">
-        <button className="number-picker-buttons" onClick={this.increasePicker}>
+      <button className="number-picker-buttons" onClick={this.increaseNumber}>
           +
         </button>
-        <span className="number-picker-label">{this.state.pickedNumber}</span>
-        <button className="number-picker-buttons" onClick={this.decreasePicker}>
+      <span className="number-picker-label">{this.state.counter}</span>
+      <button className="number-picker-buttons" onClick={this.decreaseNumber}>
           -
         </button>
       </div>;

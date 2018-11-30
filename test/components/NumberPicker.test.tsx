@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import CounterButton from "../../src/components/CounterButton";
 import NumberPicker from '../../src/components/NumberPicker';
-import NumberDisplayer from "../../src/components/NumberDisplayer";
 
 describe("NumberPicker", () => {
   describe("render", () => {
@@ -42,14 +40,20 @@ describe("NumberPicker", () => {
       expect(wrapper.find('div').childAt(1).is('span')).toBeTruthy();
     });
 
-    test('Botón suma contador al hacer click', () => {
-      const wrapper = shallow(<NumberPicker />);
+    test('El orden debe ser +, 0, -.', () => {
+      const wrapper = shallow(<NumberPicker/>);
+      const texts = wrapper.find('div').children().map(node => node.text());
+      expect(texts).toEqual(['+', '0', '-']);
+    });
+
+    test('Cuando hago click en el Botón de sumar, este suma 1', () => {
+      const wrapper = shallow(<NumberPicker/>);
       wrapper.find('button').at(0).simulate("click");
       expect(wrapper.find("span").text()).toBe("1");
     });
 
-    test('Botón resta contador al hacer click', () => {
-      const wrapper = shallow(<NumberPicker />);
+    test('Cuando hago click en el Botón de restar, este resta 1', () => {
+      const wrapper = shallow(<NumberPicker/>);
       wrapper.find('button').at(1).simulate("click");
       expect(wrapper.find("span").text()).toBe("-1");
     });
