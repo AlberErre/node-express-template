@@ -27,13 +27,21 @@ export default class NumberPicker extends React.Component<{}, NumberPickerState>
   render() {
     return (
       <div style={numberPickerStyle}>
-        <button style={numberPickerButton} onClick={this.increaseNumber}>
-            +
-        </button>
+        {
+          this.state.counter < 10
+          &&
+          <button style={numberPickerButton} onClick={this.increaseNumber}>
+              +
+          </button>
+        }
         <span style={numberPickerLabel}>{this.state.counter}</span>
-        <button style={numberPickerButton} onClick={this.decreaseNumber}>
-            -
-        </button>
+        {
+          this.state.counter > -10
+          &&
+          <button style={numberPickerButton} onClick={this.decreaseNumber}>
+              -
+          </button>
+        }
       </div>
     );
   }
