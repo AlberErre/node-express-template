@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface CounterButtonState {
   counter: number;
@@ -34,7 +34,7 @@ export default class CounterButton extends React.Component<CounterButtonProps,Co
   render() {
     return <button
         onClick={
-          this.props.buttonSymbol === "+"
+          this.props.buttonSymbol === '+'
             ? this.increaseCount
             : this.decreaseCount
         }

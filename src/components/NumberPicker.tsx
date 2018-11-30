@@ -1,5 +1,5 @@
-import * as React from "react";
-import NumberDisplayer from "./NumberDisplayer";
+import * as React from 'react';
+import NumberDisplayer from './NumberDisplayer';
 
 export interface NumberPickerState {
   counter: number;
@@ -64,18 +64,18 @@ const numberPickerLabel: React.CSSProperties = {
 };
 
 const numberPickerButton: React.CSSProperties = {
-  backgroundColor: "#4CAF50",
-  border: "none",
-  color: "white",
-  width: "30px",
-  height: "30px",
-  textAlign: "center",
-  textDecoration: "none",
-  display: "inline-block",
-  borderRadius: "50%",
-  fontSize: "25px",
-  paddingBottom: "5px",
-  lineHeight: "25px",
-  cursor: "pointer",
+  backgroundColor: '#4CAF50',
+  border: 'none',
+  color: 'white',
+  width: '30px',
+  height: '30px',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  borderRadius: '50%',
+  fontSize: '25px',
+  paddingBottom: '5px',
+  lineHeight: '25px',
+  cursor: 'pointer',
   outline: 'none'
 };

@@ -2,8 +2,8 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import NumberPicker from '../../src/components/NumberPicker';
 
-describe("NumberPicker", () => {
-  describe("render", () => {
+describe('NumberPicker', () => {
+  describe('render', () => {
     test('Debería renderizar los 3 átomos', () => {
       const wrapper = shallow(<NumberPicker/>);
       expect(wrapper.find('div').children()).toHaveLength(3);
@@ -48,14 +48,14 @@ describe("NumberPicker", () => {
 
     test('Cuando hago click en el Botón de sumar, este suma 1', () => {
       const wrapper = shallow(<NumberPicker/>);
-      wrapper.find('button').at(0).simulate("click");
-      expect(wrapper.find("span").text()).toBe("1");
+      wrapper.find('button').at(0).simulate('click');
+      expect(wrapper.find('span').text()).toBe('1');
     });
 
     test('Cuando hago click en el Botón de restar, este resta 1', () => {
       const wrapper = shallow(<NumberPicker/>);
-      wrapper.find('button').at(1).simulate("click");
-      expect(wrapper.find("span").text()).toBe("-1");
+      wrapper.find('button').at(1).simulate('click');
+      expect(wrapper.find('span').text()).toBe('-1');
     });
   });
 });
