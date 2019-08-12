@@ -1,60 +1,34 @@
 {
-  "name": "react-typescript-playground",
+  "name": "node-express-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "build": "webpack",
-    "start": "node dist/bundle.js",
-    "dev": "webpack-dev-server --mode development",
-    "test": "jest",
-    "test-watch": "jest --watch"
+    "tsc": "tsc",
+    "start": "yarn tsc && node build/server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlberErre/node-express-template.git"
+  },
   "author": "Alber Erre",
   "license": "MIT",
-  "devDependencies": {
-    "@types/enzyme": "^3.1.10",
-    "@types/jest": "^22.2.3",
-    "@types/node": "^10.1.3",
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "@types/webpack": "^4.4.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.0.1",
-    "jest-css-modules": "^1.1.0",
-    "style-loader": "^0.23.1",
-    "ts-jest": "^22.4.6",
-    "ts-loader": "^4.5.0",
-    "typescript": "^2.8.3",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4"
+  "bugs": {
+    "url": "https://github.com/AlberErre/node-express-template/issues"
   },
+  "homepage": "https://github.com/AlberErre/node-express-template#readme",
   "dependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "colors": "^1.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/config/jest/preprocessor.js"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleNameMapper": {
-      "\\.(css|jpg|png|svg)$": "<rootDir>/node_modules/jest-css-modules"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/jest/setup.js"
-    ]
+  "devDependencies": {
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.17.0",
+    "@types/mongoose": "^5.5.12",
+    "@types/node": "^12.7.1",
+    "@types/typescript": "^2.0.0",
+    "typescript": "^3.5.3"
   }
 }
